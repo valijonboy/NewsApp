@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News App</string>
+    <string name="app_name">Fresh News</string>
     <string name="no_news">News not available!</string>
     <string name="no_internet_conn">No internet connection!</string>
     <string name="title_activity_settings">Settings</string>

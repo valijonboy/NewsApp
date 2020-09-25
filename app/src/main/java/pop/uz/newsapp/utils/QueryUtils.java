@@ -1,10 +1,7 @@
 package pop.uz.newsapp.utils;
 
-import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
-
-import androidx.annotation.RequiresApi;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,19 +22,21 @@ import pop.uz.newsapp.model.Article;
 public class QueryUtils {
 
 
-    /** Tag for the log messages */
+    /**
+     * Tag for the log messages
+     */
     public static final String LOG_TAG = QueryUtils.class.getSimpleName();
 
 
-    public static ArrayList<Article> fetchNewsData(String requestUrl){
+    public static ArrayList<Article> fetchNewsData(String requestUrl) {
         // Create URL object
         URL url = creatUrl(requestUrl);
 
         // Perform HTTP request to the URL and receive a JSON response back
-        String jsonResponse  = null;
+        String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
-        }catch (IOException e){
+        } catch (IOException e) {
             Log.e(LOG_TAG, "Error closing input stream", e);
         }
 
@@ -45,6 +44,7 @@ public class QueryUtils {
 
         return extractArticlesFromJSON(jsonResponse);
     }
+
     /**
      * Returns new URL object from the given string URL.
      */
@@ -52,7 +52,7 @@ public class QueryUtils {
         URL url = null;
         try {
             url = new URL(stringUrl);
-        }catch (MalformedURLException e){
+        } catch (MalformedURLException e) {
             Log.e(LOG_TAG, "Error with creating URL", e);
         }
         return url;
@@ -65,11 +65,11 @@ public class QueryUtils {
 
     private static String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder builder = new StringBuilder();
-        if (inputStream != null){
+        if (inputStream != null) {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
             BufferedReader reader = new BufferedReader(inputStreamReader);
             String line = reader.readLine();
-            while (line != null){
+            while (line != null) {
                 builder.append(line);
                 line = reader.readLine();
             }
@@ -85,7 +85,7 @@ public class QueryUtils {
         String jsonResponse = "";
 
         // If the URL is null, then return early.
-        if (url == null){
+        if (url == null) {
             return jsonResponse;
         }
 
@@ -100,19 +100,19 @@ public class QueryUtils {
 
             // If the request was successful (response code 200),
             // then read the input stream and parse the response.
-            if (urlConnection.getResponseCode() == 200){
+            if (urlConnection.getResponseCode() == 200) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
-            }else {
+            } else {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
-        }finally {
-            if (urlConnection != null){
+        } finally {
+            if (urlConnection != null) {
                 urlConnection.disconnect();
             }
-            if (inputStream != null){
+            if (inputStream != null) {
                 inputStream.close();
             }
         }
@@ -126,7 +126,7 @@ public class QueryUtils {
     public static ArrayList<Article> extractArticlesFromJSON(String articleJSON) {
 
         // If the JSON string is empty or null, then return early.
-        if (TextUtils.isEmpty(articleJSON)){
+        if (TextUtils.isEmpty(articleJSON)) {
             return null;
         }
         ArrayList<Article> articles = new ArrayList<>();
@@ -141,10 +141,10 @@ public class QueryUtils {
 
                 JSONObject object = results.getJSONObject(i);
 
-               String title = object.getString("webTitle");
-               String sectionName = object.getString("sectionName");
-               String webUrl = object.getString("webUrl");
-               String publicDate = object.getString("webPublicationDate");
+                String title = object.getString("webTitle");
+                String sectionName = object.getString("sectionName");
+                String webUrl = object.getString("webUrl");
+                String publicDate = object.getString("webPublicationDate");
 
 
                 Article article = new Article(title, sectionName, webUrl, publicDate);

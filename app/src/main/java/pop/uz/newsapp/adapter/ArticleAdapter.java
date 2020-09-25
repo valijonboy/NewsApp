@@ -46,10 +46,11 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
         return articles != null ? articles.size() : 0;
     }
 
-    public class ArticleHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ArticleHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView title, nameSection, publicDate;
         OnItemClickListener onItemClickListener;
+
         public ArticleHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
 
@@ -73,8 +74,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
         void onItemClick(String webUrl);
     }
 
-    public void setData(ArrayList<Article> data){
-        this.articles =  data;
+    public void setData(ArrayList<Article> data) {
+        this.articles = data;
         notifyDataSetChanged();
     }
 }

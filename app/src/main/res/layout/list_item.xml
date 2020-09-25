@@ -4,24 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="@dimen/padding_activity10">
 
     <TextView
         android:id="@+id/name_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/tertiary_text_light"
-        android:textSize="14sp"
-        tools:text="Opinion"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/section_textsize14"
+        android:textStyle="bold"
+        tools:text="Opinion" />
 
     <TextView
         android:id="@+id/title_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:paddingTop="@dimen/padding_top5"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="@dimen/title_text_size18"
         android:textStyle="bold"
         tools:text="The right's culture war is no longer a sideshow
         to our politics – it is our politics | Nesrine Malik" />
@@ -30,9 +30,9 @@
         android:id="@+id/public_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:paddingTop="@dimen/padding_top5"
         android:textColor="@android:color/tertiary_text_light"
-        android:textSize="12sp"
+        android:textSize="@dimen/time_text_size12"
         tools:text="2020-08-08T21:01:18Z" />
 
 </LinearLayout>

@@ -1,6 +1,6 @@
 package pop.uz.newsapp.model;
 
-public class Article{
+public class Article {
 
     private String title;
     private String nameSection;

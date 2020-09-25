@@ -14,6 +14,7 @@ import pop.uz.newsapp.utils.QueryUtils;
 public class NewsLoader extends AsyncTaskLoader<ArrayList<Article>> {
 
     private String mUrl;
+
     public NewsLoader(@NonNull Context context, String url) {
         super(context);
         mUrl = url;
@@ -28,11 +29,10 @@ public class NewsLoader extends AsyncTaskLoader<ArrayList<Article>> {
     @Override
     public ArrayList<Article> loadInBackground() {
 
-        if (mUrl == null){
+        if (mUrl == null) {
             return null;
         }
 
-        ArrayList<Article> articles = QueryUtils.fetchNewsData(mUrl);
-        return articles;
+        return QueryUtils.fetchNewsData(mUrl);
     }
 }

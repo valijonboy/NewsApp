@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri baseUri = Uri.parse(THEGUARDIAN_NEWS_URL);
         Uri.Builder builder = baseUri.buildUpon();
 
-        builder.appendQueryParameter(orderBy, "order-bay");
-        builder.appendQueryParameter(pageSize, "page-size");
-        builder.appendQueryParameter(category, "section");
+        builder.appendQueryParameter("order-by", orderBy);
+        builder.appendQueryParameter("page-size", pageSize);
+        builder.appendQueryParameter("section", category);
 
         return new NewsLoader(this, builder.toString());
     }
