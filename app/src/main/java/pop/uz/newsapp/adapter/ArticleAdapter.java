@@ -63,12 +63,14 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleH
 
         @Override
         public void onClick(View v) {
-            onItemClickListener.onItemClick(getAdapterPosition());
+            Article article = articles.get(getAdapterPosition());
+            String webUrl = article.getWebUrl();
+            onItemClickListener.onItemClick(webUrl);
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(String webUrl);
     }
 
     public void setData(ArrayList<Article> data){

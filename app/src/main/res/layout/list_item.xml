@@ -10,16 +10,17 @@
         android:id="@+id/name_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/tertiary_text_light"
         android:textSize="14sp"
-        tools:text="Opinion" />
+        tools:text="Opinion"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/title_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:text="The right's culture war is no longer a sideshow
@@ -30,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/tertiary_text_light"
         android:textSize="12sp"
         tools:text="2020-08-08T21:01:18Z" />
 

@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="no_news">News not available!</string>
+    <string name="no_internet_conn">No internet connection!</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="settings_menu_item">Settings</string>
+
+
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="true">@string/settings_order_by_newest_value</string>
+
+    <string name="settings_order_by_newest_label">Newest</string>
+    <string name="settings_order_by_newest_value" translatable="true">newest</string>
+
+    <string name="settings_order_by_most_oldest_label">Oldest</string>
+    <string name="settings_order_by_most_oldest_value" translatable="true">oldest</string>
+
+    <string name="settings_page_size_label">Page Size</string>
+    <string name="settings_page_size_key" translatable="true">page_size</string>
+    <string name="settings_page_size_default" translatable="true">20</string>
+
+    <string name="settings_category_label">Choose Category</string>
+    <string name="settings_category_key" translatable="true">section</string>
+    <string name="settings_category_default" translatable="true">@string/settings_us_news_cat_value</string>
+
+    <string name="settings_us_news_cat_label">US NEWS</string>
+    <string name="settings_us_news_cat_value" translatable="true">us-news</string>
+
+    <string name="settings_politic_news_cat_label">Politics</string>
+    <string name="settings_politic_news_cat_value" translatable="true">politics</string>
+
+    <string name="settings_world_news_cat_label">World news</string>
+    <string name="settings_world_news_cat_value" translatable="true">world-news</string>
+
+    <string name="settings_news_cat_label">News</string>
+    <string name="settings_news_cat_value" translatable="true">news</string>
+
+    <string name="settings_business_cat_label">Business</string>
+    <string name="settings_business_cat_value" translatable="true">business</string>
+
+    <string name="settings_technology_cat_label">Technology</string>
+    <string name="settings_technology_cat_value" translatable="true">technology</string>
+
 </resources>
